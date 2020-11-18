@@ -1,0 +1,38 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+		font-weight: #{$weight};
+	font-style: #{$style};
+	}
+}
+
+@import "fonts";
+
+body {
+	font-family: Roboto;
+	display: flex;
+	flex-direction: column;
+	font-size: 16px;
+}
+
+span {
+	font-size: 20px;
+	@media (max-width:767px) {
+		font-size: 14px;
+	}
+}
+
+.withbg {
+	border: 1px solid green;
+	// background: url(../img/morskiye_vodorosli_mini.jpg);
+	background: url(../img/morskiye_vodorosli_mini.jpg);
+	font-size: 30px;
+	background-size: cover !important;
+	background-position: center !important;
+	@media (max-width:767px) {
+		font-size: 25px;
+	}
+}
